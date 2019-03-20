@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36b9a4c8-d42e-4abb-aa96-e2f024cbf588" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/noticeboard/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/noticeboard/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/roles/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +13,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/noticeboard/settings.py">
+        <entry file="file://$PROJECT_DIR$/roles/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            <state relative-caret-position="75">
+              <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -43,6 +43,7 @@
         <option value="$PROJECT_DIR$/noticeboard/urls.py" />
         <option value="$PROJECT_DIR$/user/api.py" />
         <option value="$PROJECT_DIR$/noticeboard/settings.py" />
+        <option value="$PROJECT_DIR$/roles/models.py" />
       </list>
     </option>
   </component>
@@ -67,7 +68,12 @@
             <path>
               <item name="noticeboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="noticeboard" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="noticeboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="noticeboard" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -127,12 +133,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553089480848</updated>
-      <workItem from="1553089482294" duration="4086000" />
+      <workItem from="1553089482294" duration="4269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4086000" />
+    <option name="totallyTimeSpent" value="4269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -208,13 +214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -234,8 +233,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/noticeboard/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+        <state relative-caret-position="440">
+          <caret line="32" column="14" selection-start-line="32" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
         </state>
       </provider>
     </entry>
