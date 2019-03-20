@@ -18,5 +18,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url('', include('user.urls')),
-    url('roles/', include('roles.urls'))
+    url('roles/', include('roles.urls')).app_dict,
+    url('permissions/', include('permissions.urls'))
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'board',
     'user',
     'roles',
+    'permissions',
     'rest_framework'
 ]
 
