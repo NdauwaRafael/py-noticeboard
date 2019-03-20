@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36b9a4c8-d42e-4abb-aa96-e2f024cbf588" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/noticeboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/noticeboard/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="36b9a4c8-d42e-4abb-aa96-e2f024cbf588" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +79,6 @@
               <item name="noticeboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="noticeboard" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="noticeboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="noticeboard" type="462c0819:PsiDirectoryNode" />
-              <item name="noticeboard" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -144,16 +137,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553089480848</updated>
-      <workItem from="1553089482294" duration="6604000" />
+      <workItem from="1553089482294" duration="6835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6604000" />
+    <option name="totallyTimeSpent" value="6835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
