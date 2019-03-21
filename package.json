@@ -1,0 +1,24 @@
+{
+  "name": "NOTICEBOARD_PROJECT",
+  "version": "1.0.0",
+  "description": "Description coming soon...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NdauwaRafael/py-noticeboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NdauwaRafael/py-noticeboard/issues"
+  },
+  "homepage": "https://github.com/NdauwaRafael/py-noticeboard#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
