@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js",
-    "prod": "webpack --mode production ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js"
+    "prod": "webpack --mode production ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js",
+    "watch": "npm run dev --watch"
   },
   "repository": {
     "type": "git",
