@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import Header from './Layouts/Header';
 import ReactDOM from 'react-dom';
 
 class App extends Component {
     render() {
         return (
-            <h1>Hello tomorrow</h1>
+            <Header />
         );
 
     }
