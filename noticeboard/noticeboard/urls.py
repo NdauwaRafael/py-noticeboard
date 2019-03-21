@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 
-
 urlpatterns = [
+    url('', include('frontend.urls')),
     url('', include('user.urls')),
     url('roles/', include('roles.urls')),
     url('permissions/', include('permissions.urls'))
