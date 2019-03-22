@@ -29,8 +29,9 @@ class Posts extends Component {
                                     <th scope="row">{post.id}</th>
                                     <td>{post.title}</td>
                                     <td>{post.description}</td>
-                                    <td>
-                                        <button type="button" className="btn btn-outline-success">View</button>
+                                    <td style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <button type="button" style={{ marginRight: 20 }} className="btn btn-outline-success">View</button>
+                                        <button type="button" className="btn btn-outline-danger">Delete</button>
                                     </td>
                                 </tr>
                             ))
