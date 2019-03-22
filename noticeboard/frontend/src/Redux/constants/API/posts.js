@@ -1,4 +1,4 @@
-export const addUserApi = async (post) => {
+export const addPostApi = async (post) => {
     let options = {
         method: 'POST',
         headers: {

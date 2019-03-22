@@ -23,8 +23,14 @@ export const addPostFailed = (resp) => {
     }
 }
 
-export const addPost = () => dispatch => {
-
+export const addPost = (post) => dispatch => {
+    postApi.addPostApi(post)
+        .then(resp => {
+            return dispatch(addPostSuccess(resp))
+        })
+        .catch(error => {
+            return dispatch(deletePostSuccess(error.toString()))
+        })
 }
 
 //GET POSTs
