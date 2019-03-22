@@ -4,7 +4,7 @@ import {
     ADD_POST_SUCCESS,
     DELETE_POST_SUCCESS
 } from '../../constants/actionTypes';
-import { getPosts } from '../../constants/API/posts';
+import * as postApi from '../../constants/API/posts';
 
 //GET POSTs
 export const getPostsSuccess = (resp) => {
@@ -23,7 +23,7 @@ export const getPostsFailed = (resp) => {
 }
 
 export const getAllPosts = () => dispatch => {
-    getPosts()
+    postApi.getPosts()
         .then(resp => {
             return dispatch(getPostsSuccess(resp));
         })

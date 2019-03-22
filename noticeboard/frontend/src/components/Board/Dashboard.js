@@ -1,9 +1,12 @@
-import React, {Component} from 'react';
-
-class Dashboard extends Component{
+import React, { Component, Fragment } from 'react';
+import Posts from './Posts'
+class Dashboard extends Component {
     render() {
         return (
-            <h1>Bord Dashboard</h1>
+            <Fragment>
+                <h1>Bord Dashboard</h1>
+                <Posts />
+            </Fragment>
         )
     }
 }

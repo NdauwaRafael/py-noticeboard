@@ -1,7 +1,3 @@
-let getPosts = async () => {
+export const getPosts = async () => {
     return await (await (await (fetch('api/posts')))).json();
 };
-
-export default {
-    getPosts
-}
