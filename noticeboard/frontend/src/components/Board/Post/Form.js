@@ -57,14 +57,14 @@ class PostForm extends Component {
     }
 
     render() {
-        const { title, description } = this.state
+        const { title, description, errors } = this.state
         return (
             <Fragment>
-                <form onSubmit={this.onSave()}>
-                    <TextInput name='title' label="Post Title" value={title} error={errors.title} onChange={this.handleInputChange()} />
+                <form onSubmit={this.onSave}>
+                    <TextInput name='title' label="Post Title" value={title} error={errors.title} onChange={this.handleChange} />
 
-                    <Textarea name="description" label="Post Description" value={description} error={errors.description} onChange={this.handleInputChange()} />
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <Textarea name="description" label="Post Description" value={description} error={errors.description} onChange={this.handleChange} />
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
 
             </Fragment>
