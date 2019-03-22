@@ -1,5 +1,5 @@
 let getPosts = async () => {
-    return await (await (await (fetch('http://localhost:3004/authors')))).json();
+    return await (await (await (fetch('api/posts')))).json();
 };
 
 export default {
