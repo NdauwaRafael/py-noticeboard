@@ -1,7 +1,7 @@
 import { GET_ERRORS } from '../../constants/actionTypes';
 
 const initialState = {
-    mgs: {},
+    msg: '',
     status: null
 }
 
@@ -9,7 +9,8 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case GET_ERRORS:
             return {
-                msg: action.mgs
+                ...state,
+                msg: action.msg
             };
         default:
             return state;

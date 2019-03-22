@@ -11,7 +11,6 @@ import * as postApi from '../../constants/API/posts';
 
 //ERRORS
 export const getErrors = (error) => {
-    console.log(error, 'érror')
     return {
         type: GET_ERRORS,
         msg: error
@@ -28,7 +27,6 @@ export const addPostSuccess = (resp) => {
 }
 
 export const addPostFailed = (resp) => {
-    console.log(resp, 'éerere')
     return {
         type: ADD_POST_FAILED,
         errors: resp

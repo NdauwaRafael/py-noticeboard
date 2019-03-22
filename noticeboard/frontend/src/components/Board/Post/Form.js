@@ -22,6 +22,15 @@ class PostForm extends Component {
         this.onSave = this.onSave.bind(this);
     }
 
+    componentDidUpdate(prevProps) {
+        const { errors } = this.props;
+        if (prevProps.errors !== errors) {
+            this.setState({
+                errors
+            })
+        }
+    }
+
     handleChange(event) {
         let field = event.target.name;
         let value = event.target.value;
@@ -87,9 +96,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ posts: { errors } }) => {
     return {
-
+        errors
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

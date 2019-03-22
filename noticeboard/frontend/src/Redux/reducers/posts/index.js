@@ -6,7 +6,8 @@ import {
 } from '../../constants/actionTypes';
 
 const initialState = {
-    posts: []
+    posts: [],
+    errors: {}
 };
 
 export default (state = initialState, action) => {
@@ -16,6 +17,11 @@ export default (state = initialState, action) => {
                 ...state,
                 posts: [...state.posts, action.post]
             };
+        case ADD_POST_FAILED:
+            return {
+                ...state,
+                errors: action.errors
+            }
         case GET_POSTS_SUCCESS:
             return {
                 ...state,

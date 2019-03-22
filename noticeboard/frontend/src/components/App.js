@@ -6,12 +6,13 @@ import store from '../Redux';
 import Dashboard from './Board/Dashboard';
 import Alerts from './Layouts/Alerts';
 //ALERTS
-import { Provider as AlertProvider } from 'react-alert';
+import { transitions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 const alertOptions = {
-    timeout: 3000,
+    timeout: 5000,
     position: 'top right',
     offset: '70px',
+    transition: transitions.FADE
 }
 
 class App extends Component {
