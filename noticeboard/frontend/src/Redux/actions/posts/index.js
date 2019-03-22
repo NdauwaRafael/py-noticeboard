@@ -10,26 +10,36 @@ import * as postApi from '../../constants/API/posts';
 
 
 //CREATE POST
-export const addPostSuccess = (resp) => {
+export const addPostSuccess = async (resp) => {
+    const data = await resp.json();
     return {
-        type: ADD_POST_SUCCESS
+        type: ADD_POST_SUCCESS,
+        post: data
     }
 }
 
-export const addPostFailed = (resp) => {
+export const addPostFailed = async (resp) => {
+    const data = await resp.json();
     return {
         type: ADD_POST_FAILED,
-        error: resp
+        errors: data
     }
 }
 
 export const addPost = (post) => dispatch => {
     postApi.addPostApi(post)
         .then(resp => {
-            return dispatch(addPostSuccess(resp))
+
+            if (resp.status === 201) {
+                return dispatch(addPostSuccess(resp))
+                console.log(resp, 'data')
+
+            } else {
+                return dispatch(deletePostSuccess(resp))
+            }
         })
         .catch(error => {
-            return dispatch(deletePostSuccess(error.toString()))
+            return dispatch(deletePostSuccess('Ápplication Syntax Failed'))
         })
 }
 

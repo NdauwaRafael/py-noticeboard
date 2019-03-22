@@ -8,7 +8,8 @@ export const addPostApi = async (post) => {
         body: JSON.stringify(post)
     };
 
-    return await fetch('api/posts', options)
+    return await fetch('api/posts/', options)
+    // return await (await (await (fetch('api/posts')))).json();
 }
 
 export const getPosts = async () => {

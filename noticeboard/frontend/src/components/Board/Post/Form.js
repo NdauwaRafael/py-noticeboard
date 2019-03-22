@@ -3,6 +3,8 @@ import TextInput from '../../common/form/Input';
 import Textarea from '../../common/form/Textarea';
 import { connect } from 'react-redux';
 import { addPost } from '../../../Redux/actions/posts';
+import { bindActionCreators } from 'redux';
+
 class PostForm extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,7 @@ class PostForm extends Component {
     handleChange(event) {
         let field = event.target.name;
         let value = event.target.value;
-        return this.setState({ field: value });
+        return this.setState({ [field]: value });
     };
 
     postIsValid() {
@@ -55,8 +57,12 @@ class PostForm extends Component {
         if (!this.postIsValid()) {
             return;
         }
+        let post = {
+            title: this.state.title,
+            description: this.state.description
+        }
 
-        this.props.addPost({ title, description });
+        this.props.savePost(post);
     }
 
     render() {
@@ -74,9 +80,16 @@ class PostForm extends Component {
         )
     }
 }
-const addDispatchToProps = (dispatch) => {
+
+const mapDispatchToProps = (dispatch) => {
     return {
-        addPost: bindActionCreators(addPost, dispatch)
+        savePost: bindActionCreators(addPost, dispatch)
     }
 }
-export default connect(addDispatchToProps)(PostForm);
+
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
