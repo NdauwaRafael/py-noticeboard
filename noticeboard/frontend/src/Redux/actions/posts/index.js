@@ -15,6 +15,7 @@ export const getPostsSuccess = (resp) => {
 };
 
 export const getPostsFailed = (resp) => {
+    console.log(error)
     return {
         action: GET_POSTS_FAILED,
         error: resp
