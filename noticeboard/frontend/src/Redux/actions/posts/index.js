@@ -5,7 +5,8 @@ import {
     ADD_POST_FAILED,
     DELETE_POST_SUCCESS,
     DELETE_POST_FAILED,
-    GET_ERRORS
+    GET_ERRORS,
+    SUCCESS_MESSAGE
 } from '../../constants/actionTypes';
 import * as postApi from '../../constants/API/posts';
 
@@ -14,6 +15,14 @@ export const getErrors = (error) => {
     return {
         type: GET_ERRORS,
         msg: error
+    }
+}
+
+//MESSAGES
+export const getMessages = (msg) => {
+    return {
+        type: SUCCESS_MESSAGE,
+        msg: msg
     }
 }
 
@@ -36,7 +45,10 @@ export const addPostFailed = (resp) => {
 export const addPost = (post) => dispatch => {
     postApi.addPostApi(post)
         .then(resp => {
-            return dispatch(addPostSuccess(resp.data))
+            return dispatch([
+                addPostSuccess(resp.data),
+                getMessages('Post was added successfully')
+            ])
         })
         .catch(error => {
             if (error.response) {
@@ -102,7 +114,10 @@ export const deletePostFailed = (resp) => {
 export const deletePost = (id) => dispatch => {
     postApi.DELETE_POST(id)
         .then(resp => {
-            return dispatch(deletePostSuccess(id));
+            return dispatch([
+                deletePostSuccess(id),
+                getMessages('Post have been deleted successfully!!')
+            ]);
         })
         .catch(error => {
             return dispatch(deletePostFailed(error.toString()))

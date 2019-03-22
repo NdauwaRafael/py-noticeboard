@@ -4,10 +4,19 @@ import { withAlert } from 'react-alert';
 
 export class Alerts extends Component {
     componentDidUpdate(prevProps) {
-        const { error, alert } = this.props;
+        const { error, alert, messages } = this.props;
 
         if (prevProps.error !== error) {
             alert.error(error.msg);
+        }
+
+        if (prevProps.messages !== messages) {
+            if (messages.status === 'success') {
+                alert.success(messages.msg);
+            }
+            else {
+                alert.show(messages.msg);
+            }
         }
     }
 
@@ -19,7 +28,8 @@ export class Alerts extends Component {
 }
 
 const mapStateToProps = state => ({
-    error: state.errors
+    error: state.errors,
+    messages: state.messages
 })
 
 export default connect(mapStateToProps)(withAlert()(Alerts));
