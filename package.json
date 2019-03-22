@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js",
     "prod": "webpack --mode production ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js",
-    "watch": "npm run dev --watch"
+    "watch": "webpack --mode development ./noticeboard/frontend/src/index.js --output ./noticeboard/frontend/static/frontend/main.js --watch"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   }
 }
