@@ -2,7 +2,8 @@ import {
     GET_POSTS_SUCCESS,
     GET_POSTS_FAILED,
     ADD_POST_SUCCESS,
-    DELETE_POST_SUCCESS
+    DELETE_POST_SUCCESS,
+    DELETE_POST_FAILED
 } from '../../constants/actionTypes';
 import * as postApi from '../../constants/API/posts';
 
@@ -29,5 +30,31 @@ export const getAllPosts = () => dispatch => {
         })
         .catch(error => {
             return dispatch(getPostsFailed(error.toString()))
+        })
+}
+
+//DELETE POST
+export const deletePostSuccess = (resp) => {
+    return {
+        type: DELETE_POST_SUCCESS,
+        id: resp
+    }
+};
+
+export const deletePostFailed = (resp) => {
+    console.log(error)
+    return {
+        action: DELETE_POST_FAILED,
+        error: resp
+    }
+}
+
+export const deletePost = (id) => dispatch => {
+    postApi.DELETE_POST(id)
+        .then(resp => {
+            return dispatch(deletePostSuccess(id));
+        })
+        .catch(error => {
+            return dispatch(deletePostFailed(error.toString()))
         })
 }

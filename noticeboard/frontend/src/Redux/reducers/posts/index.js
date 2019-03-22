@@ -23,7 +23,8 @@ export default (state = initialState, action) => {
 
         case DELETE_POST_SUCCESS:
             return {
-                ...state
+                ...state,
+                posts: state.posts.filter(post => post.id !== action.id)
             }
 
         default:
