@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'frontend',
     'board',
+    'posts',
     'user',
     'roles',
     'permissions',
