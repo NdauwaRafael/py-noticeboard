@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Posts from './Posts'
+import Posts from './Posts/Posts';
 class Dashboard extends Component {
     render() {
         return (
