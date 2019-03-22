@@ -34,9 +34,9 @@ class Posts extends Component {
                     </thead>
                     <tbody>
                         {
-                            posts.map(post => (
+                            posts.map((post, index) => (
                                 <tr key={post.id}>
-                                    <th scope="row">{post.id}</th>
+                                    <th scope="row">{index + 1}</th>
                                     <td>{post.title}</td>
                                     <td>{post.description}</td>
                                     <td style={{ display: 'flex', justifyContent: 'space-between' }}>
