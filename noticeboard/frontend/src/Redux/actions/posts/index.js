@@ -28,7 +28,7 @@ export const addPostFailed = (resp) => {
 export const addPost = (post) => dispatch => {
     postApi.addPostApi(post)
         .then(resp => {
-            return dispatch(addPostSuccess(resp))
+            return dispatch(addPostSuccess(resp.data))
         })
         .catch(error => {
             return dispatch(addPostFailed(error.toString()))
@@ -54,7 +54,7 @@ export const getPostsFailed = (resp) => {
 export const getAllPosts = () => dispatch => {
     postApi.getPosts()
         .then(resp => {
-            return dispatch(getPostsSuccess(resp));
+            return dispatch(getPostsSuccess(resp.data));
         })
         .catch(error => {
             return dispatch(getPostsFailed(error.toString()))
