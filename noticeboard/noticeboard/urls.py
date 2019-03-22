@@ -19,5 +19,6 @@ urlpatterns = [
     url('', include('frontend.urls')),
     url('', include('user.urls')),
     url('roles/', include('roles.urls')),
-    url('permissions/', include('permissions.urls'))
+    url('permissions/', include('permissions.urls')),
+    url('posts/', include('posts.urls'))
 ]
