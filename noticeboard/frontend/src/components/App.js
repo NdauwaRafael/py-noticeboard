@@ -16,7 +16,7 @@ class App extends Component {
 }
 
 render(
-    <Provider>
+    <Provider store={store}>
         <App />
     </Provider>, 
     document.getElementById('app'));
