@@ -599,6 +599,18 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 
 /***/ }),
 
+/***/ "./noticeboard/frontend/src/Redux/constants/actionTypes.js":
+/*!*****************************************************************!*\
+  !*** ./noticeboard/frontend/src/Redux/constants/actionTypes.js ***!
+  \*****************************************************************/
+/*! exports provided: GET_POSTS_SUCCESS, ADD_POST_SUCCESS, DELETE_POST_SUCCESS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_POSTS_SUCCESS\", function() { return GET_POSTS_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ADD_POST_SUCCESS\", function() { return ADD_POST_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DELETE_POST_SUCCESS\", function() { return DELETE_POST_SUCCESS; });\n//POSTS\nvar GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';\nvar ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';\nvar DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS';\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/constants/actionTypes.js?");
+
+/***/ }),
+
 /***/ "./noticeboard/frontend/src/Redux/index.js":
 /*!*************************************************!*\
   !*** ./noticeboard/frontend/src/Redux/index.js ***!
@@ -619,7 +631,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./posts */ \"./noticeboard/frontend/src/Redux/reducers/posts/index.js\");\n/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_posts__WEBPACK_IMPORTED_MODULE_1__);\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  posts: _posts__WEBPACK_IMPORTED_MODULE_1___default.a\n}));\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./posts */ \"./noticeboard/frontend/src/Redux/reducers/posts/index.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  posts: _posts__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/index.js?");
 
 /***/ }),
 
@@ -627,10 +639,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /*!****************************************************************!*\
   !*** ./noticeboard/frontend/src/Redux/reducers/posts/index.js ***!
   \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/posts/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/actionTypes */ \"./noticeboard/frontend/src/Redux/constants/actionTypes.js\");\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nvar initialState = {\n  posts: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__[\"ADD_POST_SUCCESS\"]:\n      return _objectSpread({}, state);\n\n    case _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__[\"GET_POSTS_SUCCESS\"]:\n      return _objectSpread({}, state, {\n        posts: action.posts\n      });\n\n    case _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__[\"DELETE_POST_SUCCESS\"]:\n      return _objectSpread({}, state);\n\n    default:\n      return state;\n  }\n});\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/posts/index.js?");
 
 /***/ }),
 
