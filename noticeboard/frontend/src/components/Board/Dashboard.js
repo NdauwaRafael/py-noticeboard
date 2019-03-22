@@ -5,9 +5,11 @@ class Dashboard extends Component {
     render() {
         return (
             <Fragment>
-                <h1>Bord Dashboard</h1>
-                <AddPost />
-                <Posts />
+                <div className="container">
+                    <h1>Bord Dashboard</h1>
+                    <AddPost />
+                    <Posts />
+                </div>
             </Fragment>
         )
     }
