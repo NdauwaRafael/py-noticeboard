@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import TextInput from '../../common/form/Input';
 import Textarea from '../../common/form/Textarea';
-
+import { connect } from 'react-redux';
+import { addPost } from '../../../Redux/actions/posts';
 class PostForm extends Component {
     constructor(props) {
         super(props);
@@ -54,6 +55,8 @@ class PostForm extends Component {
         if (!this.postIsValid()) {
             return;
         }
+
+        this.props.addPost({ title, description });
     }
 
     render() {
@@ -71,5 +74,9 @@ class PostForm extends Component {
         )
     }
 }
-
-export default PostForm;
+const addDispatchToProps = (dispatch) => {
+    return {
+        addPost: bindActionCreators(addPost, dispatch)
+    }
+}
+export default connect(addDispatchToProps)(PostForm);
