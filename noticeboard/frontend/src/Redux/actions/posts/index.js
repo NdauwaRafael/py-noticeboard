@@ -4,9 +4,19 @@ import {
     ADD_POST_SUCCESS,
     ADD_POST_FAILED,
     DELETE_POST_SUCCESS,
-    DELETE_POST_FAILED
+    DELETE_POST_FAILED,
+    GET_ERRORS
 } from '../../constants/actionTypes';
 import * as postApi from '../../constants/API/posts';
+
+//ERRORS
+export const getErrors = (error) => {
+    console.log(error, 'érror')
+    return {
+        type: GET_ERRORS,
+        msg: error
+    }
+}
 
 
 //CREATE POST
@@ -18,7 +28,7 @@ export const addPostSuccess = (resp) => {
 }
 
 export const addPostFailed = (resp) => {
-    console.log(resp)
+    console.log(resp, 'éerere')
     return {
         type: ADD_POST_FAILED,
         errors: resp
@@ -31,7 +41,15 @@ export const addPost = (post) => dispatch => {
             return dispatch(addPostSuccess(resp.data))
         })
         .catch(error => {
-            return dispatch(addPostFailed(error.toString()))
+            console.log(error.response, 'response')
+            if (error.respose) {
+                return dispatch => {
+                    dispatch(addPostFailed(error.response.data))
+                    dispatch(getErrors(error.toString()))
+                };
+            } else {
+                return dispatch(getErrors(error.toString()));
+            }
         })
 }
 
@@ -57,7 +75,14 @@ export const getAllPosts = () => dispatch => {
             return dispatch(getPostsSuccess(resp.data));
         })
         .catch(error => {
-            return dispatch(getPostsFailed(error.toString()))
+            if (error.data) {
+                return dispatch => {
+                    dispatch(getPostsFailed(error.data))
+                    dispatch(getErrors(error.toString()))
+                }
+            } else {
+                return dispatch(getErrors(error.toString()));
+            }
         })
 }
 
