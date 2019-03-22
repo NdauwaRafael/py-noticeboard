@@ -42,7 +42,7 @@ export const deletePostSuccess = (resp) => {
 };
 
 export const deletePostFailed = (resp) => {
-    console.log(error)
+    console.log(resp, 'error')
     return {
         action: DELETE_POST_FAILED,
         error: resp

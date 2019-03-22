@@ -3,5 +3,5 @@ export const getPosts = async () => {
 };
 
 export const DELETE_POST = async (postId) => {
-    return await (await (await (fetch('api/posts/' + postId, { method: 'delete' })))).json();
+    return await fetch('api/posts/' + postId, { method: 'delete' });
 }
