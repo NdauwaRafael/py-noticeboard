@@ -619,7 +619,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({}));\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./posts */ \"./noticeboard/frontend/src/Redux/reducers/posts/index.js\");\n/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_posts__WEBPACK_IMPORTED_MODULE_1__);\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  posts: _posts__WEBPACK_IMPORTED_MODULE_1___default.a\n}));\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/index.js?");
+
+/***/ }),
+
+/***/ "./noticeboard/frontend/src/Redux/reducers/posts/index.js":
+/*!****************************************************************!*\
+  !*** ./noticeboard/frontend/src/Redux/reducers/posts/index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/reducers/posts/index.js?");
 
 /***/ }),
 
