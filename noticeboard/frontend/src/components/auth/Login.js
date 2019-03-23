@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loginUser } from '../../Redux/actions/auth/index';
 import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router-dom';
 export class Login extends Component {
     constructor(props) {
         super(props)
@@ -43,6 +44,9 @@ export class Login extends Component {
 
     render() {
         const { username, password, errors } = this.state;
+        if (this.props.auth.isAuthenticated) {
+            return <Redirect to="/" />
+        }
         return (
             <Fragment>
                 <LoginForm
