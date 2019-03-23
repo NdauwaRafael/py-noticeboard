@@ -9,22 +9,7 @@ import {
     SUCCESS_MESSAGE
 } from '../../constants/actionTypes';
 import * as postApi from '../../constants/API/posts';
-
-//ERRORS
-export const getErrors = (error) => {
-    return {
-        type: GET_ERRORS,
-        msg: error
-    }
-}
-
-//MESSAGES
-export const getMessages = (msg) => {
-    return {
-        type: SUCCESS_MESSAGE,
-        msg: msg
-    }
-}
+import { getMessages, getErrors } from '../messages'
 
 
 //CREATE POST
