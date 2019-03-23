@@ -6,10 +6,10 @@ export class Login extends Component {
         super(props)
 
         this.state = {
-            email: '',
+            username: '',
             password: '',
             errors: {
-                email: '',
+                username: '',
                 password: '',
             }
         }
@@ -26,11 +26,11 @@ export class Login extends Component {
     }
 
     render() {
-        const { email, password, errors } = this.props;
+        const { username, password, errors } = this.state;
         return (
             <Fragment>
                 <LoginForm
-                    email={email}
+                    username={username}
                     password={password}
                     errors={errors}
                     onChange={this.handleChange}

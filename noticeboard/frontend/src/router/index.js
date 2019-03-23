@@ -8,7 +8,7 @@ import Login from '../components/auth/Login'
 export default (
     <Switch>
         <Route path="/" exact component={Dashboard} />
-        <Route path="/login" exact component={Register} />
-        <Route path="/register" exact component={Login} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Register} />
     </Switch>
 )

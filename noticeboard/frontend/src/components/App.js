@@ -23,9 +23,11 @@ class App extends Component {
                 <Fragment>
                     <Header />
                     <Alerts />
-                    {
-                        AppRoutes
-                    }
+                    <div className="container">
+                        {
+                            AppRoutes
+                        }
+                    </div>
                 </Fragment>
             </Router>
         );

@@ -1,21 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Register } from '../auth/Register';
 
-class Header extends Component{
+class Header extends Component {
     render() {
-        return(
+        return (
             <div className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
                 <div className="container">
                     <a href="#" className="navbar-brand">NoticeBoard</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"> </span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                   id="themes">Categories <span className="caret"> </span></a>
+                                    id="themes">Categories <span className="caret"> </span></a>
                                 <div className="dropdown-menu" aria-labelledby="themes">
                                     <a className="dropdown-item" href="#">Default</a>
                                     <div className="dropdown-divider"> </div>
@@ -50,20 +52,20 @@ class Header extends Component{
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                   id="download">Sketchy <span className="caret"> </span></a>
+                                    id="download">Sketchy <span className="caret"> </span></a>
                                 <div className="dropdown-menu" aria-labelledby="download">
                                     <a className="dropdown-item" target="_blank"
-                                       href="#">Open in JSFiddle</a>
+                                        href="#">Open in JSFiddle</a>
                                     <div className="dropdown-divider"> </div>
                                     <a className="dropdown-item" href="#"
-                                       download>bootstrap.min.css</a>
+                                        download>bootstrap.min.css</a>
                                     <a className="dropdown-item" href="#"
-                                       download>bootstrap.css</a>
+                                        download>bootstrap.css</a>
                                     <div className="dropdown-divider"> </div>
                                     <a className="dropdown-item" href="#"
-                                       download>_variables.scss</a>
+                                        download>_variables.scss</a>
                                     <a className="dropdown-item" href="#"
-                                       download>_bootswatch.scss</a>
+                                        download>_bootswatch.scss</a>
                                 </div>
                             </li>
                         </ul>
@@ -71,20 +73,20 @@ class Header extends Component{
                         <ul className="nav navbar-nav ml-auto">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                   id="download">Stephen Pepela <span className="caret"> </span></a>
+                                    id="download">Stephen Pepela <span className="caret"> </span></a>
                                 <div className="dropdown-menu" aria-labelledby="download">
-                                    <a className="dropdown-item" target="_blank"
-                                       href="#">Account Profile</a>
+                                    <a className="dropdown-item"
+                                        href="/register">Register</a>
+                                    <div className="dropdown-divider"> </div>
+                                    <Link className="dropdown-item" to="/login"
+                                    >Login</Link>
+                                    <Link className="dropdown-item" to="/register"
+                                    >Register</Link>
                                     <div className="dropdown-divider"> </div>
                                     <a className="dropdown-item" href="#"
-                                       download>Account Settings</a>
+                                        download>Account Logout</a>
                                     <a className="dropdown-item" href="#"
-                                       download>Help</a>
-                                    <div className="dropdown-divider"> </div>
-                                    <a className="dropdown-item" href="#"
-                                       download>Account Logout</a>
-                                    <a className="dropdown-item" href="#"
-                                       download>Account Deactivate</a>
+                                        download>Account Deactivate</a>
                                 </div>
                             </li>
                         </ul>

@@ -15,35 +15,35 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
 
                 <TextInput
                     name='first_name'
-                    label="first_name"
+                    label="First Name"
                     value={first_name}
                     error={errors.first_name}
                     onChange={onChange} />
 
                 <TextInput
                     name='last_name'
-                    label="last_name"
+                    label="Last Name"
                     value={last_name}
                     error={errors.last_name}
                     onChange={onChange} />
 
                 <TextInput
                     name='email'
-                    label="email"
+                    label="Email"
                     value={email}
                     error={errors.email}
                     onChange={onChange} />
 
                 <TextInput
                     name='password'
-                    label="password"
+                    label="Password"
                     value={password}
                     error={errors.password}
                     onChange={onChange} />
 
                 <TextInput
                     name='cpassword'
-                    label="cpassword"
+                    label="Confirm Password"
                     value={cpassword}
                     error={errors.cpassword}
                     onChange={onChange} />
