@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 class TextInput extends Component {
 
     render() {
-        const { name, value, label, error, onChange } = this.props;
+        const { name, value, label, error, onChange, type } = this.props;
         let validatorClass = '';
         let parentValidator = '';
         let errorMessageValidator = ''
@@ -21,7 +21,7 @@ class TextInput extends Component {
         return (
             <div className={"form-group " + parentValidator}>
                 <label htmlFor={name}>{label}</label>
-                <input type="text"
+                <input type={type ? type : "text"}
                     value={value}
                     id={name}
                     name={name}

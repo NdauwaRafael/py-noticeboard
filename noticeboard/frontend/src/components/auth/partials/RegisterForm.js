@@ -31,6 +31,7 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
                     onChange={onChange} />
 
                 <TextInput
+                    type="email"
                     name='email'
                     label="Email"
                     value={email}
@@ -45,6 +46,7 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
                     onChange={onChange} />
 
                 <TextInput
+                    type="password"
                     name='cpassword'
                     label="Confirm Password"
                     value={cpassword}
