@@ -8,7 +8,8 @@ const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
-    user: null
+    user: null,
+    authError: {}
 };
 
 export default (state = initialState, action) => {
@@ -19,7 +20,7 @@ export default (state = initialState, action) => {
             return { ...state, isLoading: false, isAuthenticated: true, user: action.user };
         case AUTH_ERROR:
             localStorage.removeItem('token')
-            return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null };
+            return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null, authError: action.error };
         default:
             return state;
     }

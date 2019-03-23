@@ -5,7 +5,8 @@ import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../Redux';
 import Alerts from './Layouts/Alerts';
-import AppRoutes from '../router'
+import AppRoutes from '../router';
+import { loadUser } from '../Redux/actions/auth'
 //ALERTS
 import { transitions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
@@ -17,6 +18,9 @@ const alertOptions = {
 }
 
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser())
+    }
     render() {
         return (
             <Router>
