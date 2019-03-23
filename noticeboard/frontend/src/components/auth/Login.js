@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import LoginForm from './partials/LoginForm';
-
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { loginUser } from '../../Redux/actions/auth/index';
+import { bindActionCreators } from 'redux';
 export class Login extends Component {
     constructor(props) {
         super(props)
@@ -16,6 +19,17 @@ export class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.onSave = this.onSave.bind(this);
     }
+
+    componentDidUpdate(prevProps) {
+        const { authError } = this.props;
+        if (prevProps.authError !== authError) {
+            if (authError.username || authError.password) {
+                this.setState({
+                    errors: authError
+                })
+            }
+        }
+    }
     handleChange(event) {
         let field = event.target.name;
         let value = event.target.value;
@@ -23,6 +37,8 @@ export class Login extends Component {
     };
     onSave(e) {
         e.preventDefault();
+        const { username, password } = this.state;
+        this.props.loginUser(username, password)
     }
 
     render() {
@@ -39,5 +55,15 @@ export class Login extends Component {
         )
     }
 }
-
-export default Login
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loginUser: bindActionCreators(loginUser, dispatch)
+    }
+}
+const mapStateToProps = ({ auth: { authError }, auth }) => {
+    return {
+        auth,
+        authError
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

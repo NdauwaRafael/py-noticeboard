@@ -5,6 +5,6 @@ export const loadUserApi = (config) => {
     return axios.get('api/auth/user', config);
 }
 
-export const loginUserApi = (config) => {
-    return axios.post('api/auth/login', user, config)
+export const loginUserApi = (user, config) => {
+    return axios.post('api/auth/login/', user, config)
 }
