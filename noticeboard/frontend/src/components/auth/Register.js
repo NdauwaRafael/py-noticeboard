@@ -35,7 +35,31 @@ export class Register extends Component {
         let { user, errors } = this.state;
         let isValid = true;
 
+        if (user.password.length < 6) {
+            errors.password = 'Password is too short. Password should be atleast 6 characters long';
+            isValid = false;
+        } else {
+            errors.password = ''
+        }
 
+        if (!this.emailIsValid(user.email)) {
+            errors.email = 'Enter a valid Email';
+            isValid = false;
+        } else {
+            errors.email = ''
+        }
+
+        if (user.first_name < 3) {
+            errors.first_name = 'First Name is too short.';
+        } else {
+            errors.first_name = '';
+        }
+
+        if (user.last_name < 3) {
+            errors.last_name = 'Last Name is too short.';
+        } else {
+            errors.last_name = '';
+        }
 
         this.setState({ errors });
 
