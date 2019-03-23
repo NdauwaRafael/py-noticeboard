@@ -13,6 +13,6 @@ export const logoutUserApi = (config) => {
     return axios.post('api/auth/logout', null, config);
 }
 
-export const registerUserApi = (user) => {
+export const registerUserApi = (user, config) => {
     return axios.post('api/auth/register', user)
 }

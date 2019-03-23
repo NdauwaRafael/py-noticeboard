@@ -118,17 +118,34 @@ export const registerUserSuccess = (resp) => {
     }
 }
 
-export const registerUserFailed = (error) => {
+export const registerUserFailed = (errors) => {
     return {
         type: REGISTER_FAILED,
-        error: error
+        errors: errors
     }
 }
 
-export const registerUser = (user) => dispatch => {
-    authApi.registerUserApi(user)
-        .then(resp => { })
-        .catch(error => { })
+export const registerUser = ({ username, email, first_name, last_name, password }) => dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+
+    let user = JSON.stringify({ username, email, first_name, last_name, password })
+    authApi.registerUserApi(user, config)
+        .then(resp => {
+            return dispatch([
+                registerUserSuccess(resp.data),
+                getMessages('Registration Success. Welcome!')
+            ])
+        })
+        .catch(error => {
+            return dispatch([
+                registerUserFailed(error.response.data),
+                getErrors('User Registration Failed')
+            ])
+        })
 }
 
 //HELPER CONFIG FOR TOKKEN ROUTES

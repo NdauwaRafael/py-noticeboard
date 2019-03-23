@@ -4,7 +4,9 @@ import {
     AUTH_ERROR,
     LOGIN_SUCCESS,
     LOGIN_FAILED,
-    LOGOUT_SUCCESS
+    LOGOUT_SUCCESS,
+    REGISTER_SUCCESS,
+    REGISTER_FAILED
 } from '../../constants/actionTypes';
 
 const initialState = {
@@ -12,7 +14,8 @@ const initialState = {
     isAuthenticated: null,
     isLoading: false,
     user: null,
-    authError: {}
+    authError: {},
+    registrationErrors: {}
 };
 
 export default (state = initialState, action) => {
@@ -26,6 +29,7 @@ export default (state = initialState, action) => {
             localStorage.removeItem('token')
             return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null, authError: action.error };
         case LOGIN_SUCCESS:
+        case REGISTER_SUCCESS:
             localStorage.setItem('token', action.payload.toke)
             console.log(action.payload, 'payload')
             return {
@@ -37,6 +41,10 @@ export default (state = initialState, action) => {
         case LOGOUT_SUCCESS:
             localStorage.removeItem('token')
             return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null }
+        case REGISTER_FAILED:
+            localStorage.removeItem('token')
+            return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null, registrationErrors: action.errors }
+
         default:
             return state;
     }
