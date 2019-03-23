@@ -28,5 +28,5 @@ class RegisterSerializer(serializers.ModelSerializer):
             return user
 
 # Login Serializer
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
+# class LoginSerializer(serializers.ModelSerializer):
+#     class Meta:
