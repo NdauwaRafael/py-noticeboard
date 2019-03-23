@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email',  'password')
+        fields = ('id', 'username', 'password', 'email', 'first_name', 'last_name' )
         extra_kwargs = {
             'password': {'write_only': True}
         }
@@ -20,8 +20,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         def create(self, validated_data):
             user = User.objects.create_user(
                 validated_data['username'],
+                validated_data['password'],
                 validated_data['email'],
-                validated_data['password'])
+                validated_data['first_name'],
+                validated_data['last_name']
+                )
                 
             return user
 
@@ -34,4 +37,4 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(**data)
         if user and user.is_active:
             return user
-        raise serializers.ValidationError('Incorrect Credentials')
+        raise serializers.ValidationError("Unable to log in with provided credentials.")
