@@ -18,7 +18,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     url('', include('frontend.urls')),
     url('', include('user.urls')),
-    url('roles/', include('roles.urls')),
-    url('permissions/', include('permissions.urls')),
-    url('', include('posts.urls'))
+    url('', include('roles.urls')),
+    url('', include('permissions.urls')),
+    url('', include('posts.urls')),
+    url('', include('accounts.urls')),
 ]
