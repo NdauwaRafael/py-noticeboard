@@ -32,18 +32,7 @@ export const userLoading = () => {
 }
 export const loadUser = () => (dispatch, getState) => {
     dispatch(userLoading());
-    const token = getState().auth.token;
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }
-
-    if (token) {
-        config.headers['Authorization'] = `Token ${token}`;
-    }
-
-    authApi.loadUserApi(config)
+    authApi.loadUserApi(tokenConfig(getState))
         .then(resp => {
             return dispatch([
                 loadUserSuccess(resp.data),
@@ -105,7 +94,22 @@ export const logoutSuccess = () => {
     }
 }
 export const logoutUser = () => (dispatch, getState) => {
+    authApi.logoutUserApi(tokenConfig(getState))
+        .then(resp => {
+            return dispatch([
+                logoutSuccess(),
+                getMessages('logout Success')
+            ])
+        })
+        .catch(error => {
+            return dispatch([
+                getErrors('Logout Failed')
+            ])
+        })
+}
 
+//HELPER CONFIG FOR TOKKEN ROUTES
+export const tokenConfig = (getState) => {
     const token = getState().auth.token;
 
     const config = {
@@ -118,16 +122,5 @@ export const logoutUser = () => (dispatch, getState) => {
         config.headers['Authorization'] = `Token ${token}`;
     }
 
-    authApi.logoutUserApi(config)
-        .then(resp => {
-            return dispatch([
-                logoutSuccess(),
-                getMessages('logout Success')
-            ])
-        })
-        .catch(error => {
-            return dispatch([
-                getErrors('Logout Failed')
-            ])
-        })
+    return config
 }
