@@ -7,7 +7,11 @@ export class Login extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            errors: {
+                email: '',
+                password: '',
+            }
         }
         this.handleChange = this.handleChange.bind(this);
         this.onSave = this.onSave.bind(this);
@@ -22,12 +26,13 @@ export class Login extends Component {
     }
 
     render() {
-        const { email, password } = this.props;
+        const { email, password, errors } = this.props;
         return (
             <Fragment>
                 <LoginForm
                     email={email}
                     password={password}
+                    errors={errors}
                     onChange={this.handleChange}
                     onSave={this.onSave} />
             </Fragment>
