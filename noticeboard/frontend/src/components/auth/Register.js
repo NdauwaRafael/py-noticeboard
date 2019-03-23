@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import RegisterForm from './partials/RegisterForm';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { registerUser } from '../../Redux/actions/auth'
 export class Register extends Component {
     constructor(props) {
         super(props)
@@ -91,6 +94,7 @@ export class Register extends Component {
         if (!this.userIsValid()) {
             return;
         }
+        this.props.registerUser(this.state.user);
     }
 
     render() {
@@ -107,5 +111,14 @@ export class Register extends Component {
         )
     }
 }
-
-export default Register
+const mapStateToProps = ({ auth }) => {
+    return {
+        auth
+    }
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        registerUser: bindActionCreators(registerUser, dispatch)
+    }
+}
+export default connect(mapStateToProps)(Register) 
