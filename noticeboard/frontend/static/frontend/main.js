@@ -1107,7 +1107,7 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getErrors\", function() { return getErrors; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getMessages\", function() { return getMessages; });\n//ERRORS\nconst getErrors = error => {\n  return {\n    type: GET_ERRORS,\n    msg: error\n  };\n}; //MESSAGES\n\nconst getMessages = msg => {\n  return {\n    type: SUCCESS_MESSAGE,\n    msg: msg\n  };\n};\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/actions/messages/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getErrors\", function() { return getErrors; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getMessages\", function() { return getMessages; });\n/* harmony import */ var _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/actionTypes */ \"./noticeboard/frontend/src/Redux/constants/actionTypes.js\");\n //ERRORS\n\nconst getErrors = error => {\n  return {\n    type: _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__[\"GET_ERRORS\"],\n    msg: error\n  };\n}; //MESSAGES\n\nconst getMessages = msg => {\n  return {\n    type: _constants_actionTypes__WEBPACK_IMPORTED_MODULE_0__[\"SUCCESS_MESSAGE\"],\n    msg: msg\n  };\n};\n\n//# sourceURL=webpack:///./noticeboard/frontend/src/Redux/actions/messages/index.js?");
 
 /***/ }),
 

@@ -1,3 +1,8 @@
+import {
+    GET_ERRORS,
+    SUCCESS_MESSAGE
+} from '../../constants/actionTypes';
+
 //ERRORS
 export const getErrors = (error) => {
     return {
