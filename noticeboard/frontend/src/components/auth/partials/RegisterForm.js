@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import TextInput from '../../common/form/Input';
+import { Login } from '../Login';
+import { Link } from 'react-router-dom';
+
 
 function RegisterForm({ user: { username, first_name, last_name, email, password, cpassword }, onChange, onSave, errors }) {
     return (
@@ -48,7 +51,8 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
                     error={errors.cpassword}
                     onChange={onChange} />
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-success">Request Access</button>
+                <Link to="/login" className="btn btn-outline-secondary btn-sm" style={{ marginLeft: 20 }}>Go to Login</Link>
             </form>
         </Fragment>
     )

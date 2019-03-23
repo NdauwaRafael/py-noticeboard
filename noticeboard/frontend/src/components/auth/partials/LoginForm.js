@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import TextInput from '../../common/form/Input';
+import { Link } from 'react-router-dom';
 
 const LoginForm = ({ username, password, onChange, onSave, errors }) => {
     return (
@@ -21,7 +22,7 @@ const LoginForm = ({ username, password, onChange, onSave, errors }) => {
                     onChange={onChange} />
 
                 <button type="submit" className="btn btn-success">Login</button>
-                <button type="button" className="btn btn-outline-secondary btn-sm" style={{ marginLeft: 20 }}>Request Access</button>
+                <Link to="/register" className="btn btn-outline-secondary btn-sm" style={{ marginLeft: 20 }}>Request Access</Link>
             </form>
         </Fragment>
     )
