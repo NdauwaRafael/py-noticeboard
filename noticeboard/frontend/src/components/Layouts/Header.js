@@ -10,8 +10,7 @@ class Header extends Component {
         console.log('Yeah, Clicked')
     }
     render() {
-        // const { isAuthenticated } = this.props;
-        const isAuthenticated = true;
+        const { isAuthenticated } = this.props;
         return (
             <div className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
                 <div className="container">
