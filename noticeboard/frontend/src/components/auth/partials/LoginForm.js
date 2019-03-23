@@ -21,6 +21,7 @@ const LoginForm = ({ username, password, onChange, onSave, errors }) => {
                     onChange={onChange} />
 
                 <button type="submit" className="btn btn-success">Login</button>
+                <button type="button" className="btn btn-outline-secondary btn-sm" style={{ marginLeft: 20 }}>Request Access</button>
             </form>
         </Fragment>
     )

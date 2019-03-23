@@ -18,7 +18,7 @@ export default ({ }) =>
                 <Link className="dropdown-item" to="/login"
                 >Login</Link>
                 <Link className="dropdown-item" to="/register"
-                >Register</Link>
+                >Request Access</Link>
             </div>
         </li>
     </ul>
