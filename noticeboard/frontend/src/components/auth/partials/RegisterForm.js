@@ -51,7 +51,7 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
                     error={errors.cpassword}
                     onChange={onChange} />
 
-                <button type="submit" className="btn btn-success">Request Access</button>
+                <button type="submit" className="btn btn-success">Submit Request</button>
                 <Link to="/login" className="btn btn-outline-secondary btn-sm" style={{ marginLeft: 20 }}>Go to Login</Link>
             </form>
         </Fragment>
