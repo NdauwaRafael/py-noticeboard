@@ -12,3 +12,7 @@ export const loginUserApi = (user, config) => {
 export const logoutUserApi = (config) => {
     return axios.post('api/auth/logout', null, config);
 }
+
+export const registerUserApi = (user) => {
+    return axios.post('api/auth/register', user)
+}

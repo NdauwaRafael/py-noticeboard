@@ -7,7 +7,9 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAILED,
     LOGOUT_FAILED,
-    LOGOUT_SUCCESS
+    LOGOUT_SUCCESS,
+    REGISTER_SUCCESS,
+    REGISTER_FAILED
 } from '../../constants/actionTypes';
 
 //CHECK AUTH STATE
@@ -106,6 +108,27 @@ export const logoutUser = () => (dispatch, getState) => {
                 getErrors('Logout Failed')
             ])
         })
+}
+
+//REGISTER USER 
+export const registerUserSuccess = (resp) => {
+    return {
+        type: REGISTER_SUCCESS,
+        user: resp
+    }
+}
+
+export const registerUserFailed = (error) => {
+    return {
+        type: REGISTER_FAILED,
+        error: error
+    }
+}
+
+export const registerUser = (user) => dispatch => {
+    authApi.registerUserApi(user)
+        .then(resp => { })
+        .catch(error => { })
 }
 
 //HELPER CONFIG FOR TOKKEN ROUTES
