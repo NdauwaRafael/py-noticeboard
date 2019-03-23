@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react'
 import RegisterForm from './partials/RegisterForm';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { registerUser } from '../../Redux/actions/auth'
+import { registerUser } from '../../Redux/actions/auth';
+import { Redirect } from 'react-router-dom';
+
 export class Register extends Component {
     constructor(props) {
         super(props)
@@ -99,6 +101,10 @@ export class Register extends Component {
 
     render() {
         let { user, errors } = this.state;
+        let { auth } = this.props;
+        if (auth.isAuthenticated) {
+            return <Redirect to="/" />
+        }
         return (
             <Fragment>
                 <RegisterForm
