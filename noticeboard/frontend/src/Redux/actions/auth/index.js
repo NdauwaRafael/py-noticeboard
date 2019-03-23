@@ -3,7 +3,9 @@ import { getMessages, getErrors } from '../messages';
 import {
     USER_LOADING,
     USER_LOADED,
-    AUTH_ERROR
+    AUTH_ERROR,
+    LOGIN_SUCCESS,
+    LOGIN_FAILED
 } from '../../constants/actionTypes';
 
 //CHECK AUTH STATE
@@ -50,6 +52,42 @@ export const loadUser = () => (dispatch, getState) => {
             return dispatch([
                 loadUserFailed(error.response.data),
                 // getErrors(error.response.data.details)
+            ])
+        })
+}
+//LOGIN 
+export const loginSuccess = (resp) => {
+    return {
+        type: LOGIN_SUCCESS,
+        payload: resp
+    }
+}
+export const loginFailed = (resp) => {
+    return {
+        type: LOGIN_FAILED,
+        error: resp
+    }
+}
+
+export const loginUser = (username, password) => dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+
+    let body = JSON.stringify({ username, password })
+    authApi.loginUserApi(body, config)
+        .then(resp => {
+            dispatch([
+                loginSuccess(resp.data),
+                getMessages('Login Success. Welcome!')
+            ])
+        })
+        .catch(error => {
+            return dispatch([
+                loginFailed(error.response.data),
+                getErrors('Login Failed')
             ])
         })
 }
