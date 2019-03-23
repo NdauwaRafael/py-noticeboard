@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'user',
     'roles',
     'permissions',
+    'accounts',
     'rest_framework',
     'knox'
 ]
