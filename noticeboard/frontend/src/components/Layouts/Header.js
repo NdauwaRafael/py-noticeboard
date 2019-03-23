@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Register } from '../auth/Register';
+import { logoutUser } from '../../Redux/actions/auth';
 import HeaderGuest from './partials/HeaderGuest';
 import HeaderAuthenticated from './partials/HeaderAuthenticated'
 import { connect } from 'react-redux';
-
+import { bindActionCreators } from 'redux';
 class Header extends Component {
-    logoutUser() {
-        console.log('Yeah, Clicked')
-    }
     render() {
-        const { isAuthenticated } = this.props;
+        const { isAuthenticated, user } = this.props;
         return (
             <div className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
                 <div className="container">
-                    <a href="#" className="navbar-brand">NoticeBoard</a>
+                    <Link to='/' className="navbar-brand">NoticeBoard</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -22,7 +19,7 @@ class Header extends Component {
                     </button>
 
                     {
-                        isAuthenticated ? <HeaderAuthenticated logoutUser={this.logoutUser} /> : <HeaderGuest />
+                        isAuthenticated ? <HeaderAuthenticated user={user} logoutUser={this.props.logoutUser()} /> : <HeaderGuest />
                     }
 
                 </div>
@@ -30,13 +27,13 @@ class Header extends Component {
         )
     }
 }
-const mapDispatchToProps = (dispatch) => {
-
-}
+const mapDispatchToProps = (dispatch) => ({
+    return: bindActionCreators(logoutUser, dispatch)
+})
 const mapStateToProps = ({ auth: { isAuthenticated }, auth }) => {
     return {
         isAuthenticated,
         auth
     }
 }
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

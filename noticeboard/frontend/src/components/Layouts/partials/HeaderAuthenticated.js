@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export default ({ logoutUser }) =>
+export default ({ logoutUser, user }) =>
     <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav">
             <li className="nav-item dropdown">
@@ -66,7 +66,7 @@ export default ({ logoutUser }) =>
         <ul className="nav navbar-nav ml-auto">
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                    id="download">Stephen Pepela <span className="caret"> </span></a>
+                    id="download">{user ? `${user.username} Account` : 'User Account'} <span className="caret"> </span></a>
                 <div className="dropdown-menu" aria-labelledby="download">
                     <a className="dropdown-item"
                         href="#">Profile</a>

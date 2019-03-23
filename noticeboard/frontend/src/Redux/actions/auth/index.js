@@ -5,7 +5,9 @@ import {
     USER_LOADED,
     AUTH_ERROR,
     LOGIN_SUCCESS,
-    LOGIN_FAILED
+    LOGIN_FAILED,
+    LOGOUT_FAILED,
+    LOGOUT_SUCCESS
 } from '../../constants/actionTypes';
 
 //CHECK AUTH STATE
@@ -85,9 +87,47 @@ export const loginUser = (username, password) => dispatch => {
             ])
         })
         .catch(error => {
+            if (error.response.data && error.response.data.non_field_errors) {
+                return dispatch(getErrors('Login failed: ' + error.response.data.non_field_errors.join()))
+            } else {
+                return dispatch([
+                    loginFailed(error.response.data),
+                    getErrors('Login Failed')
+                ])
+            }
+        })
+}
+
+//LOGOUT USER
+export const logoutSuccess = () => {
+    return {
+        type: LOGOUT_SUCCESS
+    }
+}
+export const logoutUser = () => (dispatch, getState) => {
+
+    const token = getState().auth.token;
+
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+
+    if (token) {
+        config.headers['Authorization'] = `Token ${token}`;
+    }
+
+    authApi.logoutUserApi(config)
+        .then(resp => {
             return dispatch([
-                loginFailed(error.response.data),
-                getErrors('Login Failed')
+                logoutSuccess(),
+                getMessages('logout Success')
+            ])
+        })
+        .catch(error => {
+            return dispatch([
+                getErrors('Logout Failed')
             ])
         })
 }
