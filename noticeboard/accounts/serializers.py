@@ -21,8 +21,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             user = User.objects.create_user(
                 validated_data['username'],
                 validated_data['email'],
-                # validated_data['firstname'],
-                # validated_data['lastname'],
                 validated_data['password'])
                 
             return user
@@ -30,7 +28,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 # Login Serializer
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
-    password = serializers.CharField
+    password = serializers.CharField()
 
     def validate(self, data):
         user = authenticate(**data)
