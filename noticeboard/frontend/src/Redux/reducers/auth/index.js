@@ -1,4 +1,8 @@
-import { ADD_POST_SUCCESS } from '../../constants/actionTypes';
+import {
+    USER_LOADING,
+    USER_LOADED,
+    AUTH_ERROR
+} from '../../constants/actionTypes';
 
 const initialState = {
     token: localStorage.getItem('token'),
@@ -9,8 +13,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST_SUCCESS:
-            return state;
+        case USER_LOADING:
+            return { ...state, isLoading: true };
+        case USER_LOADED:
+            return { ...state, isLoading: false, isAuthenticated: true, user: action.user };
+        case AUTH_ERROR:
+            localStorage.removeItem('token')
+            return { ...state, isLoading: false, isAuthenticated: false, token: null, user: null };
         default:
             return state;
     }
