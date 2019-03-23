@@ -20,7 +20,7 @@ const LoginForm = ({ username, password, onChange, onSave, errors }) => {
                     error={errors.password}
                     onChange={onChange} />
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-success">Login</button>
             </form>
         </Fragment>
     )
