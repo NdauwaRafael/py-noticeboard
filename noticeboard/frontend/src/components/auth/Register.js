@@ -14,6 +14,34 @@ export class Register extends Component {
             },
             errors: {}
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.onSave = this.onSave.bind(this);
+    }
+
+    handleChange(event) {
+        let field = event.target.name;
+        let value = event.target.value;
+        let user = Object.assign({}, this.state.user);
+        user[field] = value;
+        return this.setState({ user });
+    };
+
+    userIsValid() {
+        let { user, errors } = this.state;
+        let isValid = true;
+
+
+
+        this.setState({ errors });
+
+        return isValid;
+    }
+
+    onSave(e) {
+        e.preventDefault();
+        if (!this.userIsValid()) {
+            return;
+        }
     }
 
     render() {
@@ -23,6 +51,8 @@ export class Register extends Component {
                 <RegisterForm
                     user={user}
                     errors={errors}
+                    onChange={this.handleChange}
+                    onSave={this.onSave}
                 />
             </Fragment>
         )
