@@ -114,9 +114,9 @@ export const logoutUser = () => (dispatch, getState) => {
 export const registerUserSuccess = (resp) => {
     return {
         type: REGISTER_SUCCESS,
-        user: resp
+        payload: resp
     }
-}
+};
 
 export const registerUserFailed = (errors) => {
     return {
@@ -142,8 +142,8 @@ export const registerUser = ({ username, email, first_name, last_name, password 
         })
         .catch(error => {
             return dispatch([
-                registerUserFailed(error.response.data),
-                getErrors('User Registration Failed')
+                getErrors('User Registration Failed'),
+                registerUserFailed(error.response.data)
             ])
         })
 }

@@ -39,6 +39,7 @@ function RegisterForm({ user: { username, first_name, last_name, email, password
                     onChange={onChange} />
 
                 <TextInput
+                    type='password'
                     name='password'
                     label="Password"
                     value={password}

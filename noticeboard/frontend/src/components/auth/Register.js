@@ -30,7 +30,16 @@ export class Register extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.onSave = this.onSave.bind(this);
     }
-
+    componentDidUpdate(prevProps) {
+        const { registrationErrors } = this.props;
+        if (prevProps.registrationErrors !== registrationErrors) {
+            if (registrationErrors.username || registrationErrors.email || registrationErrors.password || registrationErrors.first_name || registrationErrors.last_name) {
+                this.setState({
+                    errors: registrationErrors
+                })
+            }
+        }
+    }
     handleChange(event) {
         let field = event.target.name;
         let value = event.target.value;
@@ -61,7 +70,7 @@ export class Register extends Component {
             errors.password = ''
         }
 
-        if (cpassword !== password) {
+        if (user.cpassword !== user.password) {
             errors.cpassword = 'Passwords do not match.';
             isValid = false;
         } else {
@@ -117,9 +126,10 @@ export class Register extends Component {
         )
     }
 }
-const mapStateToProps = ({ auth }) => {
+const mapStateToProps = ({ auth: { registrationErrors }, auth }) => {
     return {
-        auth
+        auth,
+        registrationErrors
     }
 };
 const mapDispatchToProps = (dispatch) => {
@@ -127,4 +137,4 @@ const mapDispatchToProps = (dispatch) => {
         registerUser: bindActionCreators(registerUser, dispatch)
     }
 }
-export default connect(mapStateToProps)(Register) 
+export default connect(mapStateToProps, mapDispatchToProps)(Register) 

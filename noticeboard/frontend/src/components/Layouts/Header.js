@@ -28,7 +28,7 @@ class Header extends Component {
     }
 }
 const mapDispatchToProps = (dispatch) => ({
-    return: bindActionCreators(logoutUser, dispatch)
+    logoutUser: bindActionCreators(logoutUser, dispatch)
 })
 const mapStateToProps = ({ auth: { isAuthenticated }, auth }) => {
     return {
