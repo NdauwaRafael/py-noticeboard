@@ -1,11 +1,30 @@
-import React, { Component } from 'react'
-
+import React, { Component, Fragment } from 'react'
+import RegisterForm from './partials/RegisterForm';
 export class Register extends Component {
-    render() {
-        return (
-            <div>
+    constructor(props) {
+        super(props)
 
-            </div>
+        this.state = {
+            user: {
+                username: '',
+                first_name: '',
+                last_name: '',
+                email: '',
+                password: ''
+            },
+            errors: {}
+        }
+    }
+
+    render() {
+        let { user, errors } = this.state;
+        return (
+            <Fragment>
+                <RegisterForm
+                    user={user}
+                    errors={errors}
+                />
+            </Fragment>
         )
     }
 }
