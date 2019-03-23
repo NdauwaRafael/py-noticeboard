@@ -71,9 +71,8 @@ export const getPostsSuccess = (resp) => {
 };
 
 export const getPostsFailed = (resp) => {
-    console.log(error)
     return {
-        action: GET_POSTS_FAILED,
+        type: GET_POSTS_FAILED,
         error: resp
     }
 }
@@ -84,11 +83,11 @@ export const getAllPosts = () => dispatch => {
             return dispatch(getPostsSuccess(resp.data));
         })
         .catch(error => {
-            if (error.data) {
-                return dispatch => {
-                    dispatch(getPostsFailed(error.data))
-                    dispatch(getErrors(error.toString()))
-                }
+            if (error.response) {
+                return dispatch([
+                    getPostsFailed(error.response.data),
+                    getErrors(error.response.data.detail)
+                ])
             } else {
                 return dispatch(getErrors(error.toString()));
             }
