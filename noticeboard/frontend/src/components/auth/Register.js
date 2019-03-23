@@ -26,6 +26,11 @@ export class Register extends Component {
         return this.setState({ user });
     };
 
+    emailIsValid(email) {
+        const emailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+        return emailRegex.test(String(email).toLowerCase());
+    }
+
     userIsValid() {
         let { user, errors } = this.state;
         let isValid = true;
