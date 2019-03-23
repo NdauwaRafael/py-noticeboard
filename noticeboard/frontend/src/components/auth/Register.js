@@ -10,9 +10,17 @@ export class Register extends Component {
                 first_name: '',
                 last_name: '',
                 email: '',
-                password: ''
+                password: '',
+                cpassword: ''
             },
-            errors: {}
+            errors: {
+                username: '',
+                first_name: '',
+                last_name: '',
+                email: '',
+                password: '',
+                cpassword: ''
+            }
         }
         this.handleChange = this.handleChange.bind(this);
         this.onSave = this.onSave.bind(this);
@@ -41,7 +49,12 @@ export class Register extends Component {
         } else {
             errors.password = ''
         }
-
+        if (cpassword !== password) {
+            errors.cpassword = 'Passwords do not match.';
+            isValid = false;
+        } else {
+            errors.cpassword = ''
+        }
         if (!this.emailIsValid(user.email)) {
             errors.email = 'Enter a valid Email';
             isValid = false;
